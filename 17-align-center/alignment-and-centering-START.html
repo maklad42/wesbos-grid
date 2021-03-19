@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>CSS Grid Alignment + Centering!</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="itm itm1">1</div>
+    <div class="itm itm2">2</div>
+    <div class="itm itm3">3</div>
+    <div class="itm itm4">4</div>
+    <div class="itm itm5">5</div>
+    <div class="itm itm6">6</div>
+    <div class="itm itm7">7</div>
+    <div class="itm itm8">8</div>
+    <div class="itm itm9">9</div>
+    <div class="itm itm10">10</div>
+  </div>
+
+  <style>
+    /*
+      Reference Site: Complete Guide to Grid
+      https://css-tricks.com/snippets/css/complete-guide-grid/
+
+      justify-items:   -> inline (row) axis
+        - stretch
+        - center
+        - start
+        - end
+
+      align-items:   -> vertical (column) axis
+        - stretch
+        - center
+        - start
+        - end
+
+      Combine 'justify-items' and 'align-items' by using
+        place-items
+
+      justify-content:
+        - start
+        - end
+        - center
+        - stretch
+        - space-around
+        - space-between
+        - space-evenly
+
+      align-content:
+        - start
+        - end
+        - center
+        - stretch
+        - space-around
+        - space-between
+        - space-evenly
+
+      Combine 'justify-content' and 'align-content' by using
+        place-content
+
+      justify-self:
+        - start
+        - end
+        - center
+        - stretch
+
+      align-self:
+
+      justify-* is row axis
+      align-* is column axis
+    */
+
+    .container {
+      display: grid;
+      grid-gap: 20px;
+      height: 500px;
+      border: 10px solid var(--yellow);
+      grid-template-columns: repeat(5, 100px);
+      /* grid-template-rows: repeat(5, 100px); */
+      /* justify-items: center;
+      align-items: center; */
+      place-items: stretch stretch;
+      justify-content: space-between;
+      align-content: space-between;
+    }
+
+    .itm {
+      background: paleturquoise;
+      height: 50px;
+    }
+
+    .itm5 {
+      justify-self: center;
+      align-self: center;
+    }
+  </style>
+</body>
+
+</html>
